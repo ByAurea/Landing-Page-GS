@@ -1,0 +1,22 @@
+body{
+    margin: 0px;
+    background-color: #3B528D;
+}
+
+header{
+    background-color: #8F5D8D;
+    display: flex;
+    color: #3B528D;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a{
+    color: #3B528D;
+    text-decoration: none;
+    margin-left: 20px;
+}

@@ -4,7 +4,7 @@ body{
 }
 
 header{
-    background-color: #8F5D8D;
+    background-color: #93a7e0;
     display: flex;
     color: #d6dff5;
     justify-content: space-between;
@@ -16,7 +16,7 @@ header{
 }
 
 nav a{
-    color: #d6dff5;
+    color: #3B3893;
     text-decoration: none;
     margin-left: 20px;
     transition: color 0.3s ease;
@@ -27,7 +27,7 @@ nav a:hover{
 }
 
 footer{
-    background-color: #8F5D8D;
+    background-color: #93a7e0;
     color: #d6dff5;
     display: flex;
     justify-content: space-between;
@@ -37,15 +37,20 @@ footer{
 }
 
 p{
-    margin: 35px;
+    margin: 20px;
+    padding-left: 200px;
+    padding-right: 200px;
     color: #d6dff5;
     font-size: 20px;
     display: flex;
 }
 
 h2{
+    margin: 20px;
+    padding-left: 200px;
+    padding-right: 200px;
     color: #d6dff5;
-    margin: 35px;
+    margin: px;
 }
 
 .titulo{
@@ -60,4 +65,47 @@ h2{
 
 div{
     display: flex;
+}
+
+/* parte do carrossel */
+
+.carousel-container {
+  position: relative;
+  max-width: 800px;
+  margin: 30px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.carousel-slide {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+  width: 800px;
+  height: 450px;
+  object-fit: cover;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border: none;
+  font-size: 18px;
+  border-radius: 50%;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
 }

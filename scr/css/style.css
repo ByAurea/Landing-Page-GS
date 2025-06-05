@@ -1,11 +1,13 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: #3B528D;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 112px;
-}
-
-body{
-    margin: 0px;
-    background-color: #3B528D;
 }
 
 header{

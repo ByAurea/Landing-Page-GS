@@ -1,3 +1,8 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 112px;
+}
+
 body{
     margin: 0px;
     background-color: #3B528D;
@@ -9,7 +14,7 @@ header{
     color: #d6dff5;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 100px;
+    padding: 10px 100px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -59,7 +64,7 @@ h2{
 }
 
 .logo-img {
-    width: 120px;
+    width: 100px;
     height: auto;
 }
 
@@ -89,7 +94,7 @@ div{
   object-fit: cover;
 }
 
-.prev, .next {
+.prev1, .next1, .prev2, .next2 {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -102,10 +107,10 @@ div{
   border-radius: 50%;
 }
 
-.prev {
+.prev1, .prev2 {
   left: 10px;
 }
 
-.next {
+.next1, .next2 {
   right: 10px;
 }

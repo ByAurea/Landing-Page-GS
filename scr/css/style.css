@@ -2,7 +2,6 @@ body {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    background-color: #3B528D;
     overflow-x: hidden;
 }
 
@@ -13,12 +12,10 @@ html {
 }
 
 header {
-    background-color: #93a7e0;
-    color: #d6dff5;
     padding: 10px 100px;
     position: sticky;
-    top: 0; /* Ensures the header sticks to the top */
-    z-index: 1000; /* Ensures the header stays on top of other content */
+    top: 0;
+    z-index: 1000;
 }
 
 nav {
@@ -30,24 +27,18 @@ nav {
 .nav-list {
     list-style: none;
     display: flex;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     gap: 30px;
 }
 
 .nav-list li {
     letter-spacing: 3px;
-    margin-left: 32px;
 }
 
 .nav-list a {
-    color: #d6dff5;
     text-decoration: none;
     transition: color 0.3s ease;
-}
-
-.nav-list a:hover {
-    color: #ffffff; /* Lighter color on hover */
 }
 
 .mobile-menu {
@@ -58,14 +49,11 @@ nav {
 .mobile-menu div {
     width: 32px;
     height: 2px;
-    background: #d6dff5;
     margin: 8px;
-    transition: 0.3s; /* Smooth transition for hamburger lines */
+    transition: 0.3s;
 }
 
 footer {
-    background-color: #93a7e0;
-    color: #d6dff5;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -84,7 +72,6 @@ footer p {
 }
 
 p {
-    color: #d6dff5;
     font-size: 20px;
     text-align: center;
     margin: 20px auto;
@@ -96,13 +83,11 @@ h2 {
     margin: 20px;
     padding-left: 200px;
     padding-right: 200px;
-    color: #d6dff5;
-    margin: px; /* This seems like a typo, consider removing or fixing */
+    margin: auto;
 }
 
 .titulo {
     text-align: center;
-    color: white;
 }
 
 .logo-img {
@@ -110,8 +95,7 @@ h2 {
     height: auto;
 }
 
-/* parte do carrossel */
-
+/* Parte do carrossel */
 .carousel-container {
     position: relative;
     width: 100%;
@@ -125,14 +109,14 @@ h2 {
 .carousel-slide {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: fit-content; /* impede que ele estoure o tamanho */
+    width: fit-content;
 }
 
 .carousel-slide img {
     width: 100%;
-    max-width: 100%px;
+    max-width: 100%;
     height: auto;
-    flex-shrink: 0; /* garante que só uma aparece por vez */
+    flex-shrink: 0;
     object-fit: cover;
 }
 
@@ -141,7 +125,6 @@ h2 {
     top: 50%;
     transform: translateY(-50%);
     background-color: rgba(0,0,0,0.5);
-    color: white;
     padding: 10px;
     cursor: pointer;
     border: none;
@@ -157,8 +140,7 @@ h2 {
     right: 10px;
 }
 
-/*media*/
-
+/* Media Queries (MOBILE) - Ajustes de layout para mobile */
 @media screen and (max-width: 768px) {
     .carousel-slide img {
         max-width: 100%;
@@ -186,7 +168,6 @@ h2 {
         right: 0;
         width: 100vw;
         height: 92vh;
-        background-color: #93a7e0;
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
@@ -197,7 +178,7 @@ h2 {
 
     .nav-list li {
         margin-left: 0;
-        opacity: 0; 
+        opacity: 0;
     }
 
     .mobile-menu {
@@ -206,15 +187,13 @@ h2 {
         z-index: 1001;
     }
 
-
     nav.active .nav-list {
-        transform: translateX(0%); 
+        transform: translateX(0%);
     }
 
     nav.active .nav-list li {
         opacity: 1;
     }
-
 
     nav.active .line1 {
         transform: rotate(-45deg) translate(-8px, 8px);
@@ -227,4 +206,179 @@ h2 {
     nav.active .line3 {
         transform: rotate(45deg) translate(-5px, -7px);
     }
+
+    /* Estilos dos botões de tema para Mobile */
+    .theme-switcher {
+        margin-left: 0;
+        align-self: center;
+        margin-top: 20px;
+        display: none;
+        justify-content: center;
+        width: 100%;
+    }
+
+    nav.active .theme-switcher {
+        display: flex;
+    }
+
+    /* Ajusta a ordem dos elementos na navegação mobile se necessário */
+    nav {
+        flex-wrap: wrap;
+    }
+    .logo {
+        order: 1;
+    }
+    .mobile-menu {
+        order: 3;
+    }
+    .nav-list {
+        order: 2;
+        width: 100%;
+    }
+    .theme-switcher {
+        order: 4;
+    }
+}
+
+
+/* --- CÓDIGO DE TEMA (DEVE SER O ÚLTIMO NO ARQUIVO CSS) --- */
+
+/* Estilos para os botões de tema */
+.theme-switcher {
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+
+.theme-button {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.theme-button:hover {
+    transform: scale(1.1);
+}
+
+.theme-button.active-theme {
+    border-color: white;
+}
+
+#theme-blue {
+    background-color: #3B528D;
+}
+
+#theme-green {
+    background-color: #4CAF50;
+}
+
+#theme-purple {
+    background-color: #9C27B0;
+}
+
+
+/* Definição das paletas de cores */
+
+/* Tema padrão (azul) */
+body.theme-blue {
+    background-color: #3B528D;
+}
+body.theme-blue header,
+body.theme-blue footer {
+    background-color: #93a7e0;
+}
+body.theme-blue p,
+body.theme-blue h1,
+body.theme-blue .titulo,
+body.theme-blue .nav-list a {
+    color: #d6dff5;
+}
+body.theme-blue .nav-list a:hover {
+    color: #ffffff;
+}
+body.theme-blue .mobile-menu div {
+    background: #d6dff5;
+}
+body.theme-blue .prev1, body.theme-blue .next1,
+body.theme-blue .prev3, body.theme-blue .next3,
+body.theme-blue .prev4, body.theme-blue .next4,
+body.theme-blue .prev5, body.theme-blue .next5,
+body.theme-blue .prev6, body.theme-blue .next6,
+body.theme-blue .prev7, body.theme-blue .next7 {
+    color: white;
+}
+/* Cor de fundo para o nav-list (menu mobile) no tema azul */
+body.theme-blue .nav-list {
+    background-color: #93a7e0;
+}
+
+
+/* Tema Verde */
+body.theme-green {
+    background-color: #2E7D32;
+}
+body.theme-green header,
+body.theme-green footer {
+    background-color: #66BB6A;
+}
+body.theme-green p,
+body.theme-green h1,
+body.theme-green .titulo,
+body.theme-green .nav-list a {
+    color: #E8F5E9;
+}
+body.theme-green .nav-list a:hover {
+    color: #ffffff;
+}
+body.theme-green .mobile-menu div {
+    background: #E8F5E9;
+}
+body.theme-green .prev1, body.theme-green .next1,
+body.theme-green .prev3, body.theme-green .next3,
+body.theme-green .prev4, body.theme-green .next4,
+body.theme-green .prev5, body.theme-green .next5,
+body.theme-green .prev6, body.theme-green .next6,
+body.theme-green .prev7, body.theme-green .next7 {
+    color: white;
+}
+/* Cor de fundo para o nav-list (menu mobile) no tema verde */
+body.theme-green .nav-list {
+    background-color: #66BB6A;
+}
+
+/* Tema Roxo */
+body.theme-purple {
+    background-color: #4A148C;
+}
+body.theme-purple header,
+body.theme-purple footer {
+    background-color: #AB47BC;
+}
+body.theme-purple p,
+body.theme-purple h1,
+body.theme-purple .titulo,
+body.theme-purple .nav-list a {
+    color: #F3E5F5;
+}
+body.theme-purple .nav-list a:hover {
+    color: #ffffff;
+}
+body.theme-purple .mobile-menu div {
+    background: #F3E5F5;
+}
+body.theme-purple .prev1, body.theme-purple .next1,
+body.theme-purple .prev3, body.theme-purple .next3,
+body.theme-purple .prev4, body.theme-purple .next4,
+body.theme-purple .prev5, body.theme-purple .next5,
+body.theme-purple .prev6, body.theme-purple .next6,
+body.theme-purple .prev7, body.theme-purple .next7 {
+    color: white;
+}
+/* Cor de fundo para o nav-list (menu mobile) no tema roxo */
+body.theme-purple .nav-list {
+    background-color: #AB47BC;
 }

@@ -191,7 +191,7 @@ function checkAnswer() {
 function showResult() {
     questionElement.textContent = 'Quiz Concluído!';
     optionsContainer.innerHTML = '';
-    resultContainer.innerHTML = `Você acertou ${score} de ${questions.length} perguntas!`;
+    resultContainer.innerHTML = `Você acertou ${score} de 10 perguntas!`;
     nextButton.textContent = 'Recomeçar Quiz';
     nextButton.onclick = startQuiz; 
     nextButton.disabled = false;

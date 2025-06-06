@@ -27,9 +27,12 @@ nav {
 .nav-list {
     list-style: none;
     display: flex;
-    margin: 0 auto;
+    /* REMOVIDO: margin: 0 auto; */
     padding: 0;
     gap: 30px;
+    /* Adicionado para centralizar a lista e permitir que ela ocupe o espaço */
+    justify-content: center;
+    flex-grow: 1;
 }
 
 .nav-list li {
@@ -174,6 +177,9 @@ h2 {
         transform: translateX(100%);
         transition: transform 0.3s ease-in;
         z-index: 999;
+        /* Remover justify-content e flex-grow adicionados para desktop */
+        justify-content: space-around; /* Mantém o espaçamento para mobile */
+        flex-grow: unset; /* Remove o flex-grow do desktop */
     }
 
     .nav-list li {
@@ -246,7 +252,7 @@ h2 {
 /* Estilos para os botões de tema */
 .theme-switcher {
     display: flex;
-    gap: 10px;
+    gap: 20px;
     margin-left: auto;
 }
 

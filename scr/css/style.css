@@ -408,21 +408,3 @@ body.theme-purple .nav-list {
     gap: 15px;
     margin-bottom: 25px;
 }
-
-.option-button {
-    background-color: var(--option-button-bg, #aabaf0);
-    color: var(--option-button-text, #3b528d);
-    border: 2px solid var(--option-button-border, #aabaf0);
-    padding: 15px 25px;
-    font-size: 18px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
-    text-align: left;
-}
-
-.option-button:hover {
-    transform: translateY(-3px);
-    background-color: var(--option-button-hover-bg, #c0cffc);
-    border-color: var(--option-button-hover-border, #d6dff5);
-}

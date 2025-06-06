@@ -100,3 +100,122 @@ const questions = [
         correctAnswer: "b) Fortalecendo a capacidade de resposta e adaptação das comunidades, permitindo que elas se preparem e se recuperem mais rapidamente."
     }
 ];
+
+let currentQuestionIndex = 0;
+let score = 0;
+let quizStarted = false;
+
+const questionElement = document.getElementById('question');
+const optionsContainer = document.getElementById('options-container');
+const nextButton = document.getElementById('next-button');
+const resultContainer = document.getElementById('result-container');
+const quizContainer = document.querySelector('.quiz-container');
+
+function startQuiz() {
+    quizStarted = true;
+    nextButton.textContent = 'Próxima Pergunta';
+    resultContainer.textContent = '';
+    score = 0;
+    currentQuestionIndex = 0;
+    showQuestion();
+    quizContainer.style.display = 'block';
+}
+
+function showQuestion() {
+    if (currentQuestionIndex < questions.length) {
+        const questionData = questions[currentQuestionIndex];
+        questionElement.textContent = questionData.question;
+        optionsContainer.innerHTML = '';
+        selectedOptionElement = null; 
+
+        questionData.options.forEach(option => {
+            const button = document.createElement('button');
+            button.textContent = option;
+            button.classList.add('option-button');
+            button.onclick = () => selectOption(button, option, questionData.correctAnswer);
+            optionsContainer.appendChild(button);
+        });
+
+        nextButton.disabled = true; 
+    } else {
+        showResult();
+    }
+}
+
+function selectOption(button, selectedOption, correctAnswer) {
+    if (selectedOptionElement) {
+        selectedOptionElement.classList.remove('selected');
+        selectedOptionElement.classList.remove('correct');
+        selectedOptionElement.classList.remove('incorrect');
+    }
+
+    button.classList.add('selected');
+    selectedOptionElement = button;
+
+    nextButton.disabled = false;
+}
+
+function checkAnswer() {
+    if (!selectedOptionElement) {
+        alert('Por favor, selecione uma opção antes de continuar.');
+        return;
+    }
+
+    const selectedOption = selectedOptionElement.textContent;
+    const correctAnswer = questions[currentQuestionIndex].correctAnswer;
+
+    Array.from(optionsContainer.children).forEach(button => {
+        button.classList.remove('correct');
+        button.classList.remove('incorrect');
+        button.classList.remove('selected');
+        button.disabled = true;
+    });
+
+
+    if (selectedOption === correctAnswer) {
+        score++;
+        selectedOptionElement.classList.add('correct');
+    } else {
+        selectedOptionElement.classList.add('incorrect');
+        Array.from(optionsContainer.children).forEach(button => {
+            if (button.textContent === correctAnswer) {
+                button.classList.add('correct');
+            }
+        });
+    }
+
+    nextButton.disabled = false;
+    nextButton.textContent = (currentQuestionIndex === questions.length - 1) ? 'Ver Resultado' : 'Próxima Pergunta';
+}
+
+function showResult() {
+    questionElement.textContent = 'Quiz Concluído!';
+    optionsContainer.innerHTML = '';
+    resultContainer.innerHTML = `Você acertou ${score} de ${questions.length} perguntas!`;
+    nextButton.textContent = 'Recomeçar Quiz';
+    nextButton.onclick = startQuiz; 
+    nextButton.disabled = false;
+    quizStarted = false; 
+}
+
+nextButton.addEventListener('click', () => {
+    if (!quizStarted) {
+        startQuiz();
+    } else if (selectedOptionElement) { 
+        checkAnswer();
+        setTimeout(() => {
+            currentQuestionIndex++;
+            showQuestion();
+        }, 500);
+    } else {
+        alert('Por favor, selecione uma opção antes de continuar.');
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    questionElement.textContent = 'Clique em "Começar Quiz" para testar seus conhecimentos sobre a FloodShield!';
+    optionsContainer.innerHTML = '';
+    nextButton.textContent = 'Começar Quiz';
+    nextButton.disabled = false;
+    resultContainer.textContent = '';
+});

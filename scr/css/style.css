@@ -3,11 +3,14 @@ body{
     padding: 0px;
     box-sizing: border-box;
     background-color: #3B528D;
+    overflow-x: hidden;
+
 }
 
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 112px;
+  overflow-x: hidden;
 }
 
 header{
@@ -33,24 +36,35 @@ nav a:hover{
     color: #26314d;
 }
 
-footer{
-    background-color: #93a7e0;
-    color: #d6dff5;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 50px;
-
+footer {
+  background-color: #93a7e0;
+  color: #d6dff5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
 }
 
-p{
-    margin: 20px;
-    padding-left: 200px;
-    padding-right: 200px;
-    color: #d6dff5;
-    font-size: 20px;
-    display: flex;
+footer .esquerda,
+footer .direita {
+  flex: 1 1 300px;
+  min-width: 250px;
 }
+
+footer p {
+  margin: 10px 0;
+}
+
+p {
+  color: #d6dff5;
+  font-size: 20px;
+  text-align: center;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
 
 h2{
     margin: 20px;
@@ -70,14 +84,13 @@ h2{
     height: auto;
 }
 
-div{
-    display: flex;
-}
+
 
 /* parte do carrossel */
 
 .carousel-container {
   position: relative;
+  width: 100%;
   max-width: 800px;
   margin: 30px auto;
   overflow: hidden;
@@ -88,15 +101,18 @@ div{
 .carousel-slide {
   display: flex;
   transition: transform 0.5s ease-in-out;
+  width: fit-content; /* impede que ele estoure o tamanho */
 }
 
 .carousel-slide img {
-  width: 800px;
-  height: 450px;
+  width: 100%;
+  max-width: 100%px;
+  height: auto;
+  flex-shrink: 0; /* garante que só uma aparece por vez */
   object-fit: cover;
 }
 
-.prev1, .next1, .prev2, .next2 {
+.prev1, .next1, .prev2, .next2, .prev3, .next3, .prev4, .next4, .prev5, .next5, .prev6, .next6, .prev7, .next7 {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -109,10 +125,28 @@ div{
   border-radius: 50%;
 }
 
-.prev1, .prev2 {
+.prev1, .prev2, .prev3, .prev4, .prev5, .prev6, .prev7 {
   left: 10px;
 }
 
-.next1, .next2 {
+.next1, .next2, .next3, .next4, .next5, .next6, .next7 {
   right: 10px;
+}
+
+/*media*/
+
+@media screen and (max-width: 768px) {
+  .carousel-slide img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  p {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .carousel-container {
+    max-width: 100%;
+  }
 }

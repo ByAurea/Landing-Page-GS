@@ -1,5 +1,6 @@
 function setupCarousel(carrosselId, prevClass, nextClass) {
   const carrossel = document.querySelector(`#${carrosselId}`);
+  if (!carrossel) return; // segurança caso o id não exista
   const slide = carrossel.querySelector('.carousel-slide');
   const images = slide.querySelectorAll('img');
   const prev = carrossel.querySelector(`.${prevClass}`);
@@ -25,8 +26,14 @@ function setupCarousel(carrosselId, prevClass, nextClass) {
   window.addEventListener('resize', updateCarousel);
 }
 
-// Espera o DOM carregar para inicializar:
+// Inicializa todos os carrosseis
 window.addEventListener("DOMContentLoaded", () => {
   setupCarousel('carrossel1', 'prev1', 'next1');
   setupCarousel('carrossel2', 'prev2', 'next2');
+  setupCarousel('carrossel3', 'prev3', 'next3');
+  setupCarousel('carrossel4', 'prev4', 'next4');
+  setupCarousel('carrossel5', 'prev5', 'next5');
+  setupCarousel('carrossel6', 'prev6', 'next6');
+  setupCarousel('carrossel7', 'prev7', 'next7');
 });
+

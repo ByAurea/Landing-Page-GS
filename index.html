@@ -6,42 +6,42 @@
     <title> FloodShield </title>
     <link rel="stylesheet" href="../scr/css/style.css">
     <link rel="shortcut icon" href="../scr/assets/imgs/logo-shield1.png" type="image/x-icon">
-
-
 </head>
 <body>
     <strong>
         <header>
-            <div class="logo"><img src="../scr/assets/imgs/logo2.png" alt="" class="logo-img"></div>
+            <nav>
+                <div class="logo"><img src="../scr/assets/imgs/logo2.png" alt="" class="logo-img"></div>
+                <div class="mobile-menu">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
 
-            <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+                <ul class="nav-list">
+                    <li><a href="#inicio">O Problema</a></li>
+                    <li><a href="#tecnologias1">As Tecnologias</a></li>
+                    <li><a href="#objetivos">Os Objetivos</a></li>
+                    <li><a href="#publico">O Público-Alvo</a></li>
+                    <li><a href="#beneficios">Os Benefícios</a></li>
+                    <li><a href="#impacto">Impacto</a></li>
+                </ul>
 
-            <nav class="nav-links">
-                <a href="#inicio">O Problema</a>
-                <a href="#tecnologias1">As Tecnologias</a>
-                <a href="#objetivos">Os Objetivos</a>
-                <a href="#publico">O Público-Alvo</a>
-                <a href="#beneficios">Os Benefícios</a>
-                <a href="#impacto">Impacto</a>
-
+                <div class="theme-switcher">
+                    <button id="theme-blue" class="theme-button active-theme" data-theme="blue"></button>
+                    <button id="theme-green" class="theme-button" data-theme="green"></button>
+                    <button id="theme-purple" class="theme-button" data-theme="purple"></button>
+                </div>
             </nav>
         </header>
     </strong>
     <main>
-        <h1 class="titulo" id="inicio">
-            O PROBLEMA
-        </h1>
-
-
-            <p>
-                As enchentes no Brasil afetam milhões anualmente, causadas por chuvas intensas, urbanização desordenada e políticas públicas ineficazes de prevenção.
-
-                O impacto econômico e social é grave, mas tecnologias como IA e sensores podem salvar vidas se forem integradas e ampliadas.
-            </p>
-
-            <!-- Parte do carrossel - o problema -->
-
-            <div class="carousel-container" id="carrossel1">
+        <h1 class="titulo" id="inicio">O PROBLEMA</h1>
+        <p>
+            As enchentes no Brasil afetam milhões anualmente, causadas por chuvas intensas, urbanização desordenada e políticas públicas ineficazes de prevenção.
+            O impacto econômico e social é grave, mas tecnologias como IA e sensores podem salvar vidas se forem integradas e ampliadas.
+        </p>
+        <div class="carousel-container" id="carrossel1">
             <div class="carousel-slide" id="tecnologias">
                 <img src="../scr/assets/imgs/enchente1.jpeg" alt="Enchente com casas submersos">
                 <img src="../scr/assets/imgs/enchente2.jpg" alt="Resgate durante a enchente">
@@ -51,142 +51,87 @@
             </div>
             <button class="prev1">&#10094;</button>
             <button class="next1">&#10095;</button>
-            </div>
-
-            <!-- Parte do carrossel - o problema -->
-    
-        <h1 class="titulo" id="tecnologias1">
-            AS TECNOLOGIAS
-        </h1>
-
-            <p>
-                Utilizamos sensores IoT, inteligência artificial, imagens de satélite e um aplicativo mobile integrado com alertas em tempo real.
-
-                Essas tecnologias atuam juntas para detectar riscos, prever enchentes com até 48h de antecedência e orientar populações.
-            </p>
-
-            <!-- Segundo Carrossel: As Tecnologias -->
-             
-            <div class="carousel-container" id="carrossel3">
+        </div>
+        <h1 class="titulo" id="tecnologias1">AS TECNOLOGIAS</h1>
+        <p>
+            Utilizamos sensores IoT, inteligência artificial, imagens de satélite e um aplicativo mobile integrado com alertas em tempo real.
+            Essas tecnologias atuam juntas para detectar riscos, prever enchentes com até 48h de antecedência e orientar populações.
+        </p>
+        <div class="carousel-container" id="carrossel3">
             <div class="carousel-slide">
-                <img src="../scr/assets/imgs/tech3.jpg" alt="Imagem do protótipo do aplicativo">                
+                <img src="../scr/assets/imgs/tech3.jpg" alt="Imagem do protótipo do aplicativo">
                 <img src="../scr/assets/imgs/imagem satélite.png" alt= "imagem de Satélite">
-                <img src="../scr/assets/imgs/sensor iot1.png" alt="Ideia de sensor IoT">               
+                <img src="../scr/assets/imgs/sensor iot1.png" alt="Ideia de sensor IoT">
             </div>
             <button class="prev3">&#10094;</button>
             <button class="next3">&#10095;</button>
-            </div>
-
-             <!-- Segundo Carrossel: As Tecnologias -->
-
-        <h1 class="titulo" id="objetivos">
-            OS OBJETIVOS
-        </h1>
-
-            <p>
+        </div>
+        <h1 class="titulo" id="objetivos">OS OBJETIVOS</h1>
+        <p>
             Salvar vidas por meio da antecipação e mitigação de enchentes em áreas de risco no Brasil.
             <br>
             Democratizar o acesso à informação crítica com tecnologia acessível e de fácil implementação por municípios.
-            </p>
-
-            <!-- Terceiro Carrossel: Os objetivos -->
-             
-            <div class="carousel-container" id="carrossel4">
+        </p>
+        <div class="carousel-container" id="carrossel4">
             <div class="carousel-slide">
-                <img src="../scr/assets/imgs/tech3.jpg" alt="Tecnologia 1">                
+                <img src="../scr/assets/imgs/tech3.jpg" alt="Tecnologia 1">
                 <img src="../scr/assets/imgs/imagem satélite.png" alt="Satélite">
-                <img src="../scr/assets/imgs/sensor iot1.png" alt="Sensor IoT">               
+                <img src="../scr/assets/imgs/sensor iot1.png" alt="Sensor IoT">
             </div>
             <button class="prev4">&#10094;</button>
             <button class="next4">&#10095;</button>
-            </div>
-
-             <!-- Terceiro Carrossel: Os objetivos -->
-
-        <h1 class="titulo" id="publico">
-            O PÚBLICO-ALVO
-        </h1>
-
-            <p>
-                Populações de baixa renda em regiões urbanas e rurais suscetíveis a enchentes e infraestrutura precária.
-                <br>
-                Prefeituras, Defesa Civil e órgãos públicos que precisam de ferramentas para prevenção e gestão de desastres.
-            </p>
-    
-            <!-- Quarto Carrossel: O público-alvo -->
-             
-            <div class="carousel-container" id="carrossel5">
+        </div>
+        <h1 class="titulo" id="publico">O PÚBLICO-ALVO</h1>
+        <p>
+            Populações de baixa renda em regiões urbanas e rurais suscetíveis a enchentes e infraestrutura precária.
+            <br>
+            Prefeituras, Defesa Civil e órgãos públicos que precisam de ferramentas para prevenção e gestão de desastres.
+        </p>
+        <div class="carousel-container" id="carrossel5">
             <div class="carousel-slide">
-                <img src="../scr/assets/imgs/tech3.jpg" alt="Tecnologia 2">                
+                <img src="../scr/assets/imgs/tech3.jpg" alt="Tecnologia 2">
                 <img src="../scr/assets/imgs/imagem satélite.png" alt="Imagem de satélite">
-                <img src="../scr/assets/imgs/sensor iot1.png" alt="Sensor IoT">               
+                <img src="../scr/assets/imgs/sensor iot1.png" alt="Sensor IoT">
             </div>
             <button class="prev5">&#10094;</button>
             <button class="next5">&#10095;</button>
-            </div>
-
-
-            <!-- Quarto Carrossel: O público-alvo -->
-
-        <h1 class="titulo" id="beneficios">
-            OS BENEFÍCIOS
-        </h1>
-
-            <p>
-                Redução de mortes, perdas econômicas e impactos sociais causados por enchentes em comunidades vulneráveis.
-                <br>
-                Facilidade de uso, baixo custo, escalabilidade e integração entre sensores, IA e alertas via aplicativo.
-            </p>
-
-            <!-- Quinto Carrossel: Os benefícios -->
-             
-            <div class="carousel-container" id="carrossel6">
+        </div>
+        <h1 class="titulo" id="beneficios">OS BENEFÍCIOS</h1>
+        <p>
+            Redução de mortes, perdas econômicas e impactos sociais causados por enchentes em comunidades vulneráveis.
+            <br>
+            Facilidade de uso, baixo custo, escalabilidade e integração entre sensores, IA e alertas via aplicativo.
+        </p>
+        <div class="carousel-container" id="carrossel6">
             <div class="carousel-slide">
-                <img src="../scr/assets/imgs/tech3.jpg" alt="Benefício 1">                
+                <img src="../scr/assets/imgs/tech3.jpg" alt="Benefício 1">
                 <img src="../scr/assets/imgs/imagem satélite.png" alt="Benefício 2">
-                <img src="../scr/assets/imgs/sensor iot1.png" alt="Benefício 3">               
+                <img src="../scr/assets/imgs/sensor iot1.png" alt="Benefício 3">
             </div>
             <button class="prev6">&#10094;</button>
             <button class="next6">&#10095;</button>
-            </div>
-
-            <!-- Quinto Carrossel: Os benefícios -->
-
-
-        <h1 class="titulo" id="impacto">
-            IMPACTO
-        </h1>
-
-            <p>
-                O app envia alertas personalizados com orientações de segurança antes e durante enchentes.
-                <br>
-                Comunidades agem com antecedência, evitando riscos e protegendo suas vidas e patrimônios.
-            </p>
-
-            <!-- Sexto Carrossel: Impacto -->
-             
-            <div class="carousel-container" id="carrossel7">
+        </div>
+        <h1 class="titulo" id="impacto">IMPACTO</h1>
+        <p>
+            O app envia alertas personalizados com orientações de segurança antes e durante enchentes.
+            <br>
+            Comunidades agem com antecedência, evitando riscos e protegendo suas vidas e patrimônios.
+        </p>
+        <div class="carousel-container" id="carrossel7">
             <div class="carousel-slide">
-                <img src="../scr/assets/imgs/tech3.jpg" alt="Impacto 1">                
+                <img src="../scr/assets/imgs/tech3.jpg" alt="Impacto 1">
                 <img src="../scr/assets/imgs/imagem satélite.png" alt="Impacto 2">
-                <img src="../scr/assets/imgs/sensor iot1.png" alt="Impacto 3">               
+                <img src="../scr/assets/imgs/sensor iot1.png" alt="Impacto 3">
             </div>
             <button class="prev7">&#10094;</button>
             <button class="next7">&#10095;</button>
-            </div>
-
-            <!-- Sexto Carrossel: Impacto -->
-
+        </div>
     </main>
-
-
     <footer>
         <div class="esquerda">
-      
             <BR></BR>
             <p> Veja mais sobre nós no instagram @FloodShield.Oficial
                 <br>
-        
                 FLOODSHIELD, atendimento 24h
                 <br>
                 FloodShield: Proteção que Transforma
@@ -206,8 +151,7 @@
             <p> © 2025 FloodShield. Conteúdo protegido por direitos autorais. Todos os direitos reservados. </p>
         </div>
     </footer>
-
-    <script src="../scr/js/menu.js"></script>
     <script src="../scr/js/carrossel.js"></script>
-</body>
+    <script src="../scr/js/menu.js"></script>
+    <script src=""></script> </body>
 </html>
